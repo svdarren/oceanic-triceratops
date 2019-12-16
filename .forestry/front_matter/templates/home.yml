@@ -1,0 +1,80 @@
+---
+label: Home
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    config:
+      required: true
+  - type: field_group
+    name: banner
+    label: Page Banner
+    description: The banner displayed at the top of the landing page
+    fields:
+      - type: text
+        name: title
+        label: Banner Title
+        config:
+          required: true
+      - type: textarea
+        name: subtitle
+        label: Banner Subtitle
+        description: The text displayed below the banner title
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: field_group_list
+        name: actions
+        label: Banner Action Buttons
+        fields:
+          - type: include
+            name: include_action
+            label: Action
+            template: action
+        config:
+          labelField: label
+      - type: field_group
+        name: bottom_link
+        label: Bottom Action
+        description: The action button displayed at the very bottom of the page banner
+        fields:
+          - type: text
+            name: label
+            label: Button Label
+            description: The text displayed inside the action button
+          - type: text
+            name: url
+            label: Button URL
+          - type: boolean
+            name: has_arrow
+            label: Has Arrow
+            description: Displays a downward pointing arrow below the button text
+            default: false
+          - type: boolean
+            name: is_scrolly
+            label: Is Scrolly
+            description: >-
+              gives the button a scroll animation (if the button url is a
+              section ID)
+            default: false
+  - type: blocks
+    name: sections
+    label: Sections
+    description: Home Sections
+    template_types:
+      - icons
+      - spotlights
+      - features
+      - cta
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: home
+    config:
+      required: true
+pages:
+  - index.md

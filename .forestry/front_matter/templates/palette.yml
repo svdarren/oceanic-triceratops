@@ -1,0 +1,39 @@
+---
+label: Palette
+hide_body: true
+is_partial: true
+fields:
+  - type: field_group
+    name: sass
+    label: SASS
+    fields:
+      - type: color
+        name: accent1
+        label: accent1
+        config:
+          color_format: Hex
+      - type: color
+        name: accent2
+        label: accent2
+        config:
+          color_format: Hex
+      - type: color
+        name: accent3
+        label: accent3
+        config:
+          color_format: Hex
+      - type: color
+        name: accent4
+        label: accent4
+        config:
+          color_format: Hex
+      - type: color
+        name: accent5
+        label: accent5
+        config:
+          color_format: Hex
+      - type: color
+        name: accent6
+        label: accent6
+        config:
+          color_format: Hex

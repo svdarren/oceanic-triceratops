@@ -1,0 +1,17 @@
+<!-- One -->
+<section id="{{ include.section.section_id }}" class="wrapper {{ include.section.background_style }} special">
+    <div class="inner">
+        <header class="major">
+            <h2>{{ include.section.title | newline_to_br }}</h2>
+            {{ include.section.subtitle | markdownify }}
+        </header>
+        {% assign feature_icons_is_not_empty = include.section.feature_icons | is_not_empty %}
+        {% if feature_icons_is_not_empty %}
+            <ul class="icons major">
+                {% for item in include.section.feature_icons %}
+                    <li><span class="icon {{ item.icon }} major {{ item.style }}"><span class="label">{{ item.title }}</span></span></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</section>

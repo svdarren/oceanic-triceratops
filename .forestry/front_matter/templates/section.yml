@@ -1,0 +1,38 @@
+---
+label: Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: title
+    label: Section Title
+    description: >-
+      The title displayed at the top of the section (If the section does not
+      have a title, it is used by the CMS)
+    config:
+      required: true
+  - type: text
+    name: section_id
+    label: Section ID
+    config:
+      required: true
+  - type: select
+    name: background_style
+    label: Background Style
+    description: The style used for the section background
+    default: style1
+    config:
+      source:
+        type: custom
+      options:
+        - style1
+        - style2
+        - style3
+        - style4
+  - type: text
+    name: component
+    label: Section Component
+    hidden: true
+    config:
+      required: true

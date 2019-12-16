@@ -1,0 +1,28 @@
+---
+label: Elements
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    description: The bold first line of text displayed in the page banner
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Page Subtitle
+    description: The text displayed below the page title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: elements
+    config:
+      required: true
+pages:
+  - elements.md

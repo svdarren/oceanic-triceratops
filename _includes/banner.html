@@ -1,0 +1,22 @@
+<!-- Banner -->
+<section id="banner">
+    <div class="inner">
+        <h2>{{ page.banner.title }}</h2>
+        {% assign subtitle_is_not_empty = page.banner.subtitle | is_not_empty %}
+        {% if subtitle_is_not_empty %}
+            {{ page.banner.subtitle | markdownify }}
+        {% endif %}
+        {% assign actions_is_not_empty = page.banner.actions | is_not_empty %}
+        {% if actions_is_not_empty %}
+            <ul class="actions special">
+                {% for action in page.banner.actions %}
+                    <li><a href="{% assign expr_1 = action.url | starts_with: '#' %}{% if expr_1 %}{{ action.url }}{% else %}{{ action.url | relative_url }}{% endif %}" class="button{% assign is_primary_is_not_empty = action.is_primary | is_not_empty %}{% if is_primary_is_not_empty %} primary{% endif %}{% assign is_scrolly_is_not_empty = action.is_scrolly | is_not_empty %}{% if is_scrolly_is_not_empty %} scrolly{% endif %}">{{ action.label }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    {% assign bottom_link_is_not_empty = page.banner.bottom_link | is_not_empty %}
+    {% if bottom_link_is_not_empty %}
+        <a href="{% assign expr_2 = page.banner.bottom_link.url | starts_with: '#' %}{% if expr_2 %}{{ page.banner.bottom_link.url }}{% else %}{{ page.banner.bottom_link.url | link | relative_url }}{% endif %}" class="{% assign has_arrow_is_not_empty = page.banner.bottom_link.has_arrow | is_not_empty %}{% if has_arrow_is_not_empty %}more{% endif %}{% assign is_scrolly_is_not_empty = page.banner.bottom_link.is_scrolly | is_not_empty %}{% if is_scrolly_is_not_empty %} scrolly{% endif %}">{{ page.banner.bottom_link.label }}</a>
+    {% endif %}
+</section>

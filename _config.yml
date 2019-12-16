@@ -1,0 +1,45 @@
+title: Spectral
+baseurl: /
+permalink: '/:title/'
+landing_template: home
+palette: blue
+palettes:
+  blue:
+    sass:
+      accent1: '#4598c8'
+      accent2: '#93d7ff'
+      accent3: '#b8d5ff'
+      accent4: '#a2f7c2'
+      accent5: '#6289c3'
+      accent6: '#53b678'
+  green:
+    sass:
+      accent1: '#21b2a6'
+      accent2: '#00ffcc'
+      accent3: '#00f0ff'
+      accent4: '#76ddff'
+      accent5: '#505393'
+      accent6: '#ed4933'
+sass:
+  indentWidth: 4
+  style: nested
+  precision: 10
+plugins:
+  - jekyll-menus
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - ssg-build.sh
+  - LICENSE.md
+  - README.md
+  - netlify.toml
+  - stackbit-build.sh
+  - stackbit-pull.js
+collections:
+  posts:
+    permalink: '/posts/:title/'

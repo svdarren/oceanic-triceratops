@@ -1,0 +1,15 @@
+<!-- Two -->
+<section id="{{ include.section.section_id }}" class="wrapper alt {{ include.section.background_style }}">
+    {% for spotlight in include.section.spotlights %}
+        <section class="spotlight">
+            {% assign home_img_path_is_not_empty = spotlight.home_img_path | is_not_empty %}
+            {% if home_img_path_is_not_empty %}
+                <div class="image"><img src="{{ spotlight.home_img_path | relative_url }}" alt="" /></div>
+            {% endif %}
+            <div class="content">
+                <h2>{{ spotlight.title | newline_to_br }}</h2>
+                {{ spotlight.text | markdownify }}
+            </div>
+        </section>
+    {% endfor %}
+</section>

@@ -1,0 +1,21 @@
+---
+label: Menu Configuration
+hide_body: true
+is_partial: false
+fields:
+  - type: field_group_list
+    name: actions
+    label: Menu Action Buttons
+    description: The action buttons displayed below the menu entries
+    fields:
+      - type: text
+        name: label
+        label: Button Label
+        description: The text displayed inside the button
+        config:
+          required: true
+      - type: text
+        name: url
+        label: Button URL
+    config:
+      labelField: label

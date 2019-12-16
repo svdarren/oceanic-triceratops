@@ -1,0 +1,73 @@
+---
+label: Spotlights Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: >-
+      The title displayed at the top of the section (If the section does not
+      have a title, it is used by the CMS)
+    default: Spotlights Section
+    config:
+      required: true
+  - type: text
+    name: section_id
+    label: Section Id
+    default: two
+    config:
+      required: true
+  - type: select
+    name: background_style
+    label: Background Style
+    description: The style used for the section background
+    default: style2
+    config:
+      source:
+        type: custom
+      options:
+        - style1
+        - style2
+        - style3
+        - style4
+  - type: field_group_list
+    name: spotlights
+    label: Spotlights
+    description: A list of spotlights to be displayed in the section
+    fields:
+      - type: text
+        name: title
+        label: Spotlight title
+        config:
+          required: true
+      - type: textarea
+        name: text
+        label: Spotlight text
+        description: The text displayed below the spotlight title
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: file
+        name: home_img_path
+        label: Spotlight Image
+        description: The image displayed next to the spotlight content
+    config:
+      labelField: title
+  - type: text
+    name: component
+    label: Component
+    hidden: true
+    config:
+      required: true
+    default: spotlights.html
+  - type: text
+    name: type
+    label: Reference Type Name
+    description: 'Name of the Stackbit object model, used by fields of type reference'
+    hidden: true
+    default: spotlights
+    config:
+      required: true
